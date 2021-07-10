@@ -16,11 +16,20 @@ type Bird struct {
 }
 
 func main() {
-	b := Bird{}
-	b.Name = "Opio"
-	b.Origin = "Africa"
-	b.SpeedKPH = 33.30
-	b.CanFly = true
+	// b := Bird{}
+	// b.Name = "Opio"
+	// b.Origin = "Africa"
+	// b.SpeedKPH = 33.30
+	// b.CanFly = true
+
+	b := Bird{
+		Animal: Animal{
+			Name:   "Opor",
+			Origin: "Ota",
+		},
+		SpeedKPH: 38.90,
+		CanFly:   true,
+	}
 
 	fmt.Println(b)
 	fmt.Println(b.Animal)
