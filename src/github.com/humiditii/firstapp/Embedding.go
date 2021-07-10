@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 // Embedding through composition is similar to inheritance in other programming languages
 
@@ -13,6 +16,13 @@ type Bird struct {
 	Animal   // inheriting Animal struct
 	SpeedKPH float32
 	CanFly   bool
+}
+
+// struct tags. To use Tags we have to import the reflect package
+
+type Hameed struct {
+	About    string ` required max:"100" `
+	graduate bool
 }
 
 func main() {
@@ -34,4 +44,8 @@ func main() {
 	fmt.Println(b)
 	fmt.Println(b.Animal)
 	fmt.Println(b.Name)
+
+	t := reflect.TypeOf(Hameed{})
+	field, _ := t.FieldByName("About")
+	fmt.Println(field.Tag)
 }
